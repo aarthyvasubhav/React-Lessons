@@ -68,3 +68,37 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+Points to remember:<footer></footer> - default html element starts with small letter<Footer /> - custom HTML element should be in the capital first letter, it is pre-defined to differentiate
+
+React properties:
+If we create an i]html input elements we can pass lots of attributes ex:
+<input type="text" placeholder="enter your first name" value ="Aarthy" />
+Here placeholder and values are attributes
+In React we can create our own/custom attributes for custom HTML tags
+for example:<Card name="Aarthy" tel="3289u84u2" />
+Benefits of the above:If we have a card saying the person's name img and telephone number instead of creating 1000 cards use the above method and follow the code as an example.
+In the below code function props <function Card(props){<h2>{props.name}</h2>} is  being passed props or any word passes the properties which we give in custom HTML tag while rendering("<Card name="Beyone" />
+import React from "react";import ReactDOM from "react-dom";
+const root = ReactDOM.createRoot(document.getElementById('root'));
+function Card(props){
+    return <div>        <h2>{props.name}</h2>    </div>}root.render(    <div> <h1>My contacts</h1> <Card name="Beyonce"/> </div>)
+
+
+
+
+
+FULL CODE
+HTML PAGE:
+<!DOCTYPE html><html lang="en">  <head>    <title>React Properties</title>  </head>  <body>    <div id="root"></div>    <script src="../src/index.js" type="text/jsx" ></script>  </body></html>
+
+Index.js page
+import React from "react";import ReactDOM from "react-dom";
+const root = ReactDOM.createRoot(document.getElementById('root'));
+function Card(props){
+    return <div>        <h2>{props.name}</h2>        <img src={props.img} alt="avatar_img" />        <p>{props.tel}</p>        <p>{props.email}</p>    </div>}root.render(    <div> <h1>My contacts</h1> <Card name="Beyonce" img="https://blackhistorywall.files.wordpress.com/2010/02/picture-device-independent-bitmap-119.jpg"    tel = "+123 456 789" email ="b@beyonce.com" />
+<Card name="Jack Bauer" img="https://pbs.twimg.com/profile_images/625247595825246208/X3XLea04_400x400.jpg"    tel = "+123 456 789" email ="b@beyonce.com" />
+<Card name="Chuck Norris" img="https://i.pinimg.com/originals/e3/94/47/e39447de921955826b1e498ccf9a39af.png"    tel = "+123 456 789" email ="b@beyonce.com" /> </div>)But in CUSTOM HTML TAG Element className property does not work -because everything it sees as custom propert insteaed of seeing it as html attribute.
+Full code with 
+Git code commited.
